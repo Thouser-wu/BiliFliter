@@ -1,7 +1,7 @@
 # 临时/生成文件
 *.pyc
 __pycache__/
-*.png
+/*.png
 *.log
 .DS_Store
 Thumbs.db

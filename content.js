@@ -1100,7 +1100,8 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   }
 
   if (message?.type === 'bf_get_filtered') {
-    sendResponse({ ok: true, filteredDanmakus: stats.filteredDanmakus || [], url: location.href });
+    // total 用真实统计：filteredDanmakus 是去重后记录（同弹幕 AI+本地双计 filtered 但列表只记一次），可能少于统计
+    sendResponse({ ok: true, filteredDanmakus: stats.filteredDanmakus || [], total: stats.filtered || 0, url: location.href });
     return;
   }
   if (message?.type === 'bf_get_kept') {

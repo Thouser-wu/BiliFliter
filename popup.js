@@ -143,6 +143,16 @@ async function refreshStats() {
     return;
   }
   el.textContent = formatStats({ ...resp.stats, diagnostics: resp.diagnostics });
+  // 列表展开时随统计自动刷新（每 1 秒），保证"共 N 条"实时更新
+  const listEl = document.getElementById('bf-filtered-list');
+  if (listEl && listEl.style.display !== 'none') {
+    const mode = listEl.dataset.mode || 'filtered';
+    if (mode === 'filtered') {
+      renderFilteredList(true);
+    } else if (mode === 'kept') {
+      renderKeptList(true);
+    }
+  }
 }
 
 function bindEvents(settings) {
@@ -255,29 +265,7 @@ function bindEvents(settings) {
 
   // 查看被过滤的弹幕
   document.getElementById('bf-show-filtered')?.addEventListener('click', async () => {
-    const listEl = document.getElementById('bf-filtered-list');
-    if (!listEl) return;
-
-    if (listEl.style.display === 'none' || !listEl.style.display) {
-      // 显示列表
-      const resp = await sendMessageToActiveTab({ type: 'bf_get_filtered' });
-      if (!resp?.ok || !resp.filteredDanmakus || resp.filteredDanmakus.length === 0) {
-        listEl.innerHTML = '<div class="bf-popup-filtered-empty">暂无被过滤的弹幕</div>';
-      } else {
-        const items = resp.filteredDanmakus.map(item => {
-          const time = new Date(item.time).toLocaleTimeString('zh-CN');
-          return `<div class="bf-popup-filtered-item">
-            <div class="bf-popup-filtered-text">${escapeHtml(item.text)}</div>
-            <div class="bf-popup-filtered-reason">${escapeHtml(item.reason)} - ${time}</div>
-          </div>`;
-        }).join('');
-        listEl.innerHTML = `<div class="bf-popup-filtered-count">共 ${resp.filteredDanmakus.length} 条被过滤</div>${items}`;
-      }
-      listEl.style.display = 'block';
-    } else {
-      // 隐藏列表
-      listEl.style.display = 'none';
-    }
+    renderFilteredList();
   });
 
   // 重置设置
@@ -612,13 +600,73 @@ function renderActiveSummary() {
 
 // 查看已保留的弹幕
 document.getElementById('bf-show-kept')?.addEventListener('click', async () => {
+  renderKeptList();
+});
+
+// ==================== 列表渲染（被过滤 / 已保留，支持实时刷新） ====================
+
+// 查看被过滤的弹幕：首次点击展开，再次点击收起；展开期间每 1 秒自动刷新
+async function renderFilteredList(silentRefresh) {
   const listEl = document.getElementById('bf-filtered-list');
   if (!listEl) return;
-  listEl.style.display = 'block'; // 已保留列表复用的容器默认隐藏，点击时显示
+  listEl.dataset.mode = 'filtered';
+
+  if (listEl.style.display === 'none' || !listEl.style.display) {
+    if (silentRefresh) return; // 定时刷新时列表未展开则不拉取
+    listEl.style.display = 'block'; // 展开
+  } else if (!silentRefresh) {
+    listEl.style.display = 'none'; // 再次点击 → 收起
+    return;
+  }
+
   try {
-    const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
-    if (!tab?.id) return;
-    const resp = await chrome.tabs.sendMessage(tab.id, { type: 'bf_get_kept' }, { frameId: 0 });
+    const resp = await sendMessageToActiveTab({ type: 'bf_get_filtered' });
+    if (!resp?.ok) {
+      if (!silentRefresh) {
+        listEl.innerHTML = '<div class="bf-popup-filtered-empty">请先刷新 B 站页面（content script 未就绪）</div>';
+      }
+      return;
+    }
+    const total = resp.total ?? 0;
+    const records = resp.filteredDanmakus || [];
+    if (records.length === 0) {
+      listEl.innerHTML = total > 0
+        ? `<div class="bf-popup-filtered-count">共 ${total} 条被过滤（记录已超出缓冲）</div><div class="bf-popup-filtered-empty">暂无记录</div>`
+        : '<div class="bf-popup-filtered-empty">暂无被过滤的弹幕</div>';
+      return;
+    }
+    const items = records.map(item => {
+      const time = new Date(item.time).toLocaleTimeString('zh-CN');
+      return `<div class="bf-popup-filtered-item">
+        <div class="bf-popup-filtered-text">${escapeHtml(item.text)}</div>
+        <div class="bf-popup-filtered-reason">${escapeHtml(item.reason)} - ${time}</div>
+      </div>`;
+    }).join('');
+    // total 用真实统计（记录可能因去重/上限少于统计）
+    listEl.innerHTML = `<div class="bf-popup-filtered-count">共 ${total} 条被过滤（显示最近 ${records.length} 条）</div>${items}`;
+  } catch (e) {
+    if (!silentRefresh) {
+      listEl.innerHTML = '<div class="bf-popup-filtered-empty">请先刷新 B 站页面（' + (e.message || '') + '）</div>';
+    }
+  }
+}
+
+// 查看已保留的弹幕：点击展开；展开期间每 1 秒自动刷新
+async function renderKeptList(silentRefresh) {
+  const listEl = document.getElementById('bf-filtered-list');
+  if (!listEl) return;
+  listEl.dataset.mode = 'kept';
+
+  if (listEl.style.display === 'none' || !listEl.style.display) {
+    if (silentRefresh) return;
+    listEl.style.display = 'block'; // 展开
+  } else if (!silentRefresh) {
+    listEl.style.display = 'none'; // 再次点击 → 收起
+    return;
+  }
+
+  try {
+    const resp = await sendMessageToActiveTab({ type: 'bf_get_kept' });
     if (resp?.ok) {
       const items = (resp.keptDanmakus || []).slice().reverse();
       listEl.innerHTML = '';
@@ -633,10 +681,12 @@ document.getElementById('bf-show-kept')?.addEventListener('click', async () => {
         });
       }
       listEl.scrollTop = 0;
-    } else {
+    } else if (!silentRefresh) {
       listEl.innerHTML = '<div class="bf-popup-filtered-empty">请先刷新 B 站页面（content script 未就绪）</div>';
     }
   } catch (e) {
-    listEl.innerHTML = '<div class="bf-popup-filtered-empty">请先刷新 B 站页面（' + (e.message || '') + '）</div>';
+    if (!silentRefresh) {
+      listEl.innerHTML = '<div class="bf-popup-filtered-empty">请先刷新 B 站页面（' + (e.message || '') + '）</div>';
+    }
   }
-});
+}

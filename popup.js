@@ -627,8 +627,8 @@ async function renderFilteredList(silentRefresh) {
       }
       return;
     }
-    const total = resp.total ?? 0;
     const records = resp.filteredDanmakus || [];
+    const total = resp.total ?? records.length;
     if (records.length === 0) {
       listEl.innerHTML = total > 0
         ? `<div class="bf-popup-filtered-count">共 ${total} 条被过滤（记录已超出缓冲）</div><div class="bf-popup-filtered-empty">暂无记录</div>`

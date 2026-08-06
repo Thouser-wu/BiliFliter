@@ -1,0 +1,597 @@
+/* ========================================
+   Popup 样式 v1.1.9 — 卡片化深色主题
+   设计语言：深蓝紫背景 + B站粉点缀 + 玻璃拟态卡片
+   ======================================== */
+
+:root {
+  --bf-bg: #0f0f23;
+  --bf-card: #171733;
+  --bf-card-border: rgba(255, 255, 255, 0.08);
+  --bf-accent: #fb7299;
+  --bf-accent-2: #ff9db8;
+  --bf-green: #4ade80;
+  --bf-red: #f87171;
+  --bf-text: #e5e7eb;
+  --bf-text-dim: #9ca3af;
+  --bf-text-faint: #6b7280;
+  --bf-radius: 10px;
+  --bf-radius-sm: 6px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.bf-popup {
+  width: 340px;
+  padding: 14px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  background: linear-gradient(180deg, #12122b 0%, #0f0f23 100%);
+  color: var(--bf-text);
+}
+
+/* ==================== 头部 ==================== */
+.bf-popup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  padding: 2px 2px 12px;
+  border-bottom: 1px solid var(--bf-card-border);
+}
+
+.bf-popup-title-area {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.bf-popup-icon {
+  font-size: 22px;
+  filter: drop-shadow(0 2px 6px rgba(251, 114, 153, 0.45));
+}
+
+.bf-popup-title-area h1 {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: 0.3px;
+  background: linear-gradient(90deg, #fff 30%, var(--bf-accent-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bf-popup-status {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  font-weight: 500;
+  padding: 3px 10px;
+  border-radius: 12px;
+  transition: all 0.25s;
+}
+
+.bf-popup-status.on {
+  background: rgba(74, 222, 128, 0.12);
+  color: var(--bf-green);
+  box-shadow: inset 0 0 0 1px rgba(74, 222, 128, 0.25);
+}
+
+.bf-popup-status.off {
+  background: rgba(248, 113, 113, 0.12);
+  color: var(--bf-red);
+  box-shadow: inset 0 0 0 1px rgba(248, 113, 113, 0.25);
+}
+
+.bf-popup-status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: currentColor;
+  box-shadow: 0 0 6px currentColor;
+  animation: bf-pulse 2s ease-in-out infinite;
+}
+
+@keyframes bf-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.45; }
+}
+
+/* ==================== 卡片分组 ==================== */
+.bf-popup-section {
+  margin-bottom: 10px;
+  padding: 12px;
+  background: var(--bf-card);
+  border: 1px solid var(--bf-card-border);
+  border-radius: var(--bf-radius);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+}
+
+.bf-popup-test {
+  padding-top: 12px;
+}
+
+/* ==================== Ollama 状态 ==================== */
+.bf-popup-ollama {
+  font-size: 11px;
+  font-weight: 500;
+  padding: 6px 10px;
+  border-radius: var(--bf-radius-sm);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.bf-popup-ollama.connected {
+  background: rgba(74, 222, 128, 0.1);
+  color: var(--bf-green);
+}
+
+.bf-popup-ollama.disconnected {
+  background: rgba(248, 113, 113, 0.1);
+  color: var(--bf-red);
+}
+
+/* ==================== 按钮 ==================== */
+.bf-popup-btn-small {
+  padding: 5px 12px;
+  font-size: 11px;
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: var(--bf-radius-sm);
+  color: var(--bf-text-dim);
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.bf-popup-btn-small:hover {
+  border-color: var(--bf-accent);
+  color: var(--bf-accent);
+  background: rgba(251, 114, 153, 0.08);
+  box-shadow: 0 0 10px rgba(251, 114, 153, 0.15);
+}
+
+.bf-popup-btn-small:active {
+  transform: scale(0.96);
+}
+
+.bf-popup-btn-danger:hover {
+  border-color: var(--bf-red);
+  color: var(--bf-red);
+  background: rgba(248, 113, 113, 0.08);
+  box-shadow: 0 0 10px rgba(248, 113, 113, 0.15);
+}
+
+.bf-popup-btn-full {
+  width: 100%;
+  text-align: center;
+  padding: 7px 12px;
+}
+
+/* ==================== 开关 ==================== */
+.bf-popup-switch {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  margin-bottom: 8px;
+  padding: 2px 0;
+}
+
+.bf-popup-switch input {
+  display: none;
+}
+
+.bf-popup-slider {
+  width: 38px;
+  height: 21px;
+  background: #2a2a4a;
+  border-radius: 11px;
+  position: relative;
+  transition: background 0.25s, box-shadow 0.25s;
+  flex-shrink: 0;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+.bf-popup-switch input:checked + .bf-popup-slider {
+  background: linear-gradient(90deg, var(--bf-accent), #ff5c8a);
+  box-shadow: 0 0 8px rgba(251, 114, 153, 0.4);
+}
+
+.bf-popup-slider::after {
+  content: '';
+  position: absolute;
+  width: 17px;
+  height: 17px;
+  background: #fff;
+  border-radius: 50%;
+  top: 2px;
+  left: 2px;
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+.bf-popup-switch input:checked + .bf-popup-slider::after {
+  transform: translateX(17px);
+}
+
+.bf-popup-label {
+  font-size: 12.5px;
+  color: var(--bf-text);
+  user-select: none;
+}
+
+/* ==================== 设置行 ==================== */
+.bf-popup-setting-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 9px;
+  gap: 8px;
+}
+
+.bf-popup-setting-row:last-child {
+  margin-bottom: 0;
+}
+
+.bf-popup-setting-label {
+  font-size: 12px;
+  color: var(--bf-text-dim);
+  white-space: nowrap;
+}
+
+.bf-popup-setting-row select,
+.bf-popup-input {
+  flex: 1;
+  padding: 6px 10px;
+  background: #1d1d3e;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--bf-radius-sm);
+  color: var(--bf-text);
+  font-size: 12px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.bf-popup-setting-row select:focus,
+.bf-popup-input:focus,
+.bf-popup-textarea:focus {
+  border-color: var(--bf-accent);
+  box-shadow: 0 0 0 3px rgba(251, 114, 153, 0.12);
+}
+
+.bf-popup-setting-row select option {
+  background: #1d1d3e;
+  color: var(--bf-text);
+}
+
+/* ==================== 文本域 ==================== */
+.bf-popup-textarea {
+  width: 100%;
+  padding: 8px 10px;
+  background: #1d1d3e;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--bf-radius-sm);
+  color: var(--bf-text);
+  font-size: 12px;
+  outline: none;
+  resize: vertical;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.bf-popup-textarea::placeholder {
+  color: #56568a;
+}
+
+.bf-popup-input::placeholder {
+  color: #56568a;
+}
+
+/* ==================== 区块头 ==================== */
+.bf-popup-test-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.bf-popup-stats-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.bf-popup-test-title {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--bf-text);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* ==================== 测试结果 / 统计 ==================== */
+.bf-popup-test-result {
+  margin-top: 6px;
+  font-size: 11.5px;
+  color: var(--bf-text-dim);
+  white-space: pre-wrap;
+  word-break: break-word;
+  min-height: 16px;
+  line-height: 1.7;
+}
+
+.bf-popup-test-result b {
+  color: var(--bf-accent-2);
+}
+
+/* ==================== 提示文字 ==================== */
+.bf-popup-model-hint {
+  font-size: 11px;
+  color: var(--bf-text-faint);
+  margin-top: 2px;
+  line-height: 1.5;
+}
+
+/* ==================== 底部 ==================== */
+.bf-popup-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 2px 0;
+}
+
+.bf-popup-time {
+  font-size: 10.5px;
+  color: var(--bf-text-faint);
+}
+
+/* ==================== 屏蔽词 ==================== */
+.bf-popup-blockword-input-row {
+  display: flex;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.bf-popup-blockword-input-row .bf-popup-input {
+  flex: 1;
+}
+
+.bf-popup-blockword-list {
+  margin-top: 8px;
+  max-height: 130px;
+  overflow-y: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.bf-popup-blockword-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 6px 4px 10px;
+  background: rgba(251, 114, 153, 0.1);
+  border: 1px solid rgba(251, 114, 153, 0.22);
+  border-radius: 14px;
+  font-size: 12px;
+  color: var(--bf-accent-2);
+  transition: all 0.2s;
+}
+
+.bf-popup-blockword-item:hover {
+  border-color: rgba(251, 114, 153, 0.5);
+  background: rgba(251, 114, 153, 0.16);
+}
+
+.bf-blockword-del {
+  border: none;
+  background: none;
+  color: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  font-size: 13px;
+  padding: 0 3px;
+  border-radius: 50%;
+  transition: all 0.15s;
+  line-height: 1;
+}
+
+.bf-blockword-del:hover {
+  color: var(--bf-red);
+  background: rgba(248, 113, 113, 0.15);
+}
+
+/* ==================== 屏蔽提示词 ==================== */
+.bf-popup-intent-list {
+  margin-top: 8px;
+}
+
+.bf-popup-intent-item {
+  border: 1px solid var(--bf-card-border);
+  border-radius: var(--bf-radius-sm);
+  padding: 8px 10px;
+  margin-top: 6px;
+  background: rgba(255, 255, 255, 0.02);
+  transition: border-color 0.2s;
+}
+
+.bf-popup-intent-item:hover {
+  border-color: rgba(251, 114, 153, 0.3);
+}
+
+.bf-popup-intent-item-head {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.bf-popup-intent-name {
+  font-weight: 600;
+  font-size: 12px;
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--bf-text);
+}
+
+.bf-popup-intent-scope {
+  font-size: 10px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  padding: 1px 7px;
+  color: var(--bf-text-dim);
+  white-space: nowrap;
+}
+
+.bf-popup-intent-kws {
+  margin-top: 4px;
+  line-height: 1.7;
+}
+
+.bf-intent-del {
+  border: none;
+  background: none;
+  color: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  font-size: 15px;
+  padding: 0 3px;
+  border-radius: 50%;
+  transition: all 0.15s;
+  line-height: 1;
+}
+
+.bf-intent-del:hover {
+  color: var(--bf-red);
+  background: rgba(248, 113, 113, 0.15);
+}
+
+/* ==================== 生效屏蔽词总览 ==================== */
+.bf-popup-active-list {
+  margin-top: 4px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.bf-popup-stats {
+  border-left: 2px solid var(--bf-accent);
+}
+
+.bf-popup-active-group {
+  margin-top: 6px;
+}
+
+.bf-popup-active-group-title {
+  font-size: 11px;
+  color: var(--bf-text-faint);
+  margin-bottom: 4px;
+  font-weight: 500;
+}
+
+.bf-active-chip {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--bf-text-dim);
+  border-radius: 12px;
+  padding: 3px 10px;
+  font-size: 11.5px;
+  margin: 2px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.bf-active-chip.ir {
+  background: rgba(74, 222, 128, 0.1);
+  color: var(--bf-green);
+  border-color: rgba(74, 222, 128, 0.2);
+}
+
+.bf-active-chip.bw {
+  background: rgba(251, 114, 153, 0.1);
+  color: var(--bf-accent-2);
+  border-color: rgba(251, 114, 153, 0.2);
+}
+
+.bf-active-prompt {
+  font-size: 12px;
+  color: var(--bf-green);
+  background: rgba(74, 222, 128, 0.08);
+  border: 1px solid rgba(74, 222, 128, 0.18);
+  border-radius: var(--bf-radius-sm);
+  padding: 4px 10px;
+  margin: 2px 0;
+}
+
+/* ==================== 列表（被过滤 / 已保留） ==================== */
+.bf-popup-filtered-list {
+  margin-top: 8px;
+  max-height: 300px;
+  overflow-y: auto;
+  background: #1d1d3e;
+  border: 1px solid var(--bf-card-border);
+  border-radius: var(--bf-radius-sm);
+  padding: 8px;
+}
+
+.bf-popup-filtered-count {
+  font-size: 11px;
+  color: var(--bf-text-dim);
+  margin-bottom: 8px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.bf-popup-filtered-item {
+  padding: 6px 4px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.bf-popup-filtered-item:last-child {
+  border-bottom: none;
+}
+
+.bf-popup-filtered-text {
+  font-size: 12px;
+  color: var(--bf-text);
+  word-break: break-word;
+}
+
+.bf-popup-filtered-reason {
+  font-size: 10px;
+  color: var(--bf-text-faint);
+  margin-top: 2px;
+}
+
+.bf-popup-filtered-empty {
+  font-size: 11px;
+  color: var(--bf-text-faint);
+  text-align: center;
+  padding: 12px 0;
+}
+
+.bf-popup-kept-item {
+  border-left: 3px solid var(--bf-green);
+  padding-left: 8px;
+}
+
+/* ==================== 滚动条 ==================== */
+.bf-popup ::-webkit-scrollbar {
+  width: 6px;
+}
+
+.bf-popup ::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.bf-popup ::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 3px;
+}
+
+.bf-popup ::-webkit-scrollbar-thumb:hover {
+  background: rgba(251, 114, 153, 0.4);
+}

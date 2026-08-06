@@ -1,0 +1,20 @@
+# 临时/生成文件
+*.pyc
+__pycache__/
+*.png
+*.log
+.DS_Store
+Thumbs.db
+
+# 本机工具目录（勿提交）
+.opencode/
+.playwright/
+.playwright-cli/
+
+# 内部交接文档（含项目上下文，不公开）
+bilibili-danmaku-filter-handoff.md
+
+# 本地测试脚本
+test_*.js
+gen_*.py
+rw_*.py

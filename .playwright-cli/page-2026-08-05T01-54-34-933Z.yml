@@ -1,0 +1,362 @@
+- generic [ref=e2]:
+  - generic [ref=e4]:
+    - list [ref=e5]:
+      - listitem [ref=e6]:
+        - link "首页" [ref=e7] [cursor=pointer]:
+          - /url: //www.bilibili.com
+      - listitem [ref=e14]:
+        - link "番剧" [ref=e15] [cursor=pointer]:
+          - /url: //www.bilibili.com/anime/
+      - listitem [ref=e16]:
+        - link "直播" [ref=e17] [cursor=pointer]:
+          - /url: //live.bilibili.com/
+      - listitem [ref=e18]:
+        - link "游戏中心" [ref=e19] [cursor=pointer]:
+          - /url: //game.bilibili.com/
+      - listitem [ref=e20]:
+        - link "会员购" [ref=e21] [cursor=pointer]:
+          - /url: //show.bilibili.com/platform/home.html?msource=pc_web
+      - listitem [ref=e22]:
+        - link "漫画" [ref=e23] [cursor=pointer]:
+          - /url: //manga.bilibili.com?from=bill_top_mnav
+      - listitem [ref=e24]:
+        - link "赛事" [ref=e25] [cursor=pointer]:
+          - /url: //www.bilibili.com/v/game/match/
+    - list [ref=e26]:
+      - listitem [ref=e27] [cursor=pointer]:
+        - generic [ref=e28]: 投稿
+  - generic [ref=e33]:
+    - generic [ref=e34]:
+      - generic [ref=e35]:
+        - heading "Papi酱《生气了》hiphop版 UP已经想不到标题了，你们来取吧……" [level=1] [ref=e38]
+        - generic [ref=e40]:
+          - generic [ref=e41]: 10.7万
+          - generic [ref=e44]: "238"
+          - generic [ref=e47]: 2026-08-03 10:00:00
+          - generic [ref=e49]: 含AI生成内容
+      - generic "哔哩哔哩播放器" [ref=e62]
+      - generic [ref=e72]:
+        - generic [ref=e74]:
+          - generic "点赞（Q）" [ref=e76] [cursor=pointer]: "6481"
+          - generic "投币（W）" [ref=e81] [cursor=pointer]: "2214"
+          - generic "收藏（E）" [ref=e86] [cursor=pointer]: "1040"
+          - generic [ref=e90]: "786"
+        - generic [ref=e97] [cursor=pointer]
+      - generic [ref=e100]: 改编自Papi酱原曲《生气了》AI：SUNO
+      - generic [ref=e103]:
+        - link "AI音乐征集大赛" [ref=e106] [cursor=pointer]:
+          - /url: https://m.bilibili.com/topic-detail?topic_id=1179402&topic_name=AI%E9%9F%B3%E4%B9%90%E5%BE%81%E9%9B%86%E5%A4%A7%E8%B5%9B&spm_id_from=0.0.top.function_card.click
+        - link "HIPHOP" [ref=e115] [cursor=pointer]:
+          - /url: //search.bilibili.com/all?keyword=HIPHOP&from_source=video_tag
+        - link "音乐" [ref=e118] [cursor=pointer]:
+          - /url: //search.bilibili.com/all?keyword=%E9%9F%B3%E4%B9%90&from_source=video_tag
+        - link "改编" [ref=e121] [cursor=pointer]:
+          - /url: //search.bilibili.com/all?keyword=%E6%94%B9%E7%BC%96&from_source=video_tag
+        - link "说唱" [ref=e124] [cursor=pointer]:
+          - /url: //search.bilibili.com/all?keyword=%E8%AF%B4%E5%94%B1&from_source=video_tag
+        - link "嘻哈" [ref=e127] [cursor=pointer]:
+          - /url: //search.bilibili.com/all?keyword=%E5%98%BB%E5%93%88&from_source=video_tag
+        - link "papi酱" [ref=e130] [cursor=pointer]:
+          - /url: //search.bilibili.com/all?keyword=papi%E9%85%B1&from_source=video_tag
+        - link "AI音乐" [ref=e133] [cursor=pointer]:
+          - /url: //search.bilibili.com/all?keyword=AI%E9%9F%B3%E4%B9%90&from_source=video_tag
+        - link "AI翻唱" [ref=e136] [cursor=pointer]:
+          - /url: //search.bilibili.com/all?keyword=AI%E7%BF%BB%E5%94%B1&from_source=video_tag
+    - generic:
+      - generic:
+        - generic [ref=e138]:
+          - link [ref=e141] [cursor=pointer]:
+            - /url: //space.bilibili.com/1447736/?spm_id_from=333.788.upinfo.head.click
+          - generic [ref=e142]:
+            - generic [ref=e144]:
+              - generic [ref=e145]:
+                - link "吉事堡" [ref=e146] [cursor=pointer]:
+                  - /url: //space.bilibili.com/1447736/?spm_id_from=333.788.upinfo.detail.click
+                - link " 发消息" [ref=e147] [cursor=pointer]:
+                  - /url: //message.bilibili.com/?spm_id_from=333.788.upinfo.detail.click#whisper/mid1447736
+                  - generic [ref=e148]: 
+                  - text: 发消息
+              - generic "全平台都叫吉事堡或者吉事堡Jispo 认准头像 音乐平台有一张原创专辑《自我成全》的才是我的号" [ref=e149]
+            - generic [ref=e151]:
+              - generic [ref=e152] [cursor=pointer]
+              - generic [ref=e153] [cursor=pointer]
+        - link "广告 豆包-会思考的AI助手,轻松应对复杂需求,立即体验! 豆包 3万人感兴趣" [ref=e159] [cursor=pointer]:
+          - /url: javascript:void(0);
+          - generic [ref=e160]:
+            - generic [ref=e161]: 广告
+            - generic [ref=e164]:
+              - generic "豆包-会思考的AI助手,轻松应对复杂需求,立即体验!" [ref=e165]
+              - generic [ref=e166]: 豆包
+              - generic [ref=e168]: 3万人感兴趣
+        - generic [ref=e173]:
+          - generic [ref=e174]:
+            - generic [ref=e175]:
+              - generic [ref=e177]:
+                - link "足不出沪世巡\"Stay in Shanghai\" World Tour 🌍🏙️" [ref=e178] [cursor=pointer]:
+                  - /url: //space.bilibili.com/1447736/channel/collectiondetail?sid=8621676&spm_id_from=333.788.0.0
+                - generic [ref=e179]: （18/18）
+              - generic [ref=e180]:
+                - generic [ref=e181]:
+                  - generic [ref=e182]: 1195.7万播放
+                  - generic [ref=e183] [cursor=pointer]: 简介
+                - generic [ref=e185]: 订阅合集
+            - generic [ref=e188]:
+              - generic [ref=e191] [cursor=pointer]:
+                - generic "我把Papi酱的《生气了》改成了韩文版" [ref=e192]
+                - generic [ref=e194]: 02:49
+              - generic [ref=e198] [cursor=pointer]:
+                - generic "我把Papi酱的《生气了》改成了闽南语版，最适配的一版出现了" [ref=e199]
+                - generic [ref=e201]: 03:12
+              - generic [ref=e205] [cursor=pointer]:
+                - generic "我把Papi酱的《生气了》改成了泰语版" [ref=e206]
+                - generic [ref=e208]: 03:09
+              - generic [ref=e212] [cursor=pointer]:
+                - generic "你们要得Papi酱《生气了》印度版来了！停止这场闹剧吧。" [ref=e213]
+                - generic [ref=e215]: 03:37
+              - generic [ref=e219] [cursor=pointer]:
+                - generic "Papi酱《生气了》法语版 高音给AI唱爽了" [ref=e220]
+                - generic [ref=e222]: 03:04
+              - generic [ref=e226] [cursor=pointer]:
+                - generic "【Bonus】Papi酱《生气了》法语Oh là là版" [ref=e227]
+                - generic [ref=e229]: 03:08
+              - generic [ref=e233] [cursor=pointer]:
+                - generic "Papi酱《生气了》TVB版，出到第六版在座的各位都有责任" [ref=e234]
+                - generic [ref=e236]: 03:13
+              - generic [ref=e240] [cursor=pointer]:
+                - generic "奖池还在叠加，papi酱《生气了》全球巡演第七站——越南" [ref=e241]
+                - generic [ref=e243]: 03:38
+              - generic [ref=e247] [cursor=pointer]:
+                - generic "接着奏乐接着舞！Papi酱《生气了》KPOP版" [ref=e248]
+                - generic [ref=e250]: 02:43
+              - generic [ref=e254] [cursor=pointer]:
+                - generic "昭和金曲《マジか！》Papi酱《生气了》日文版" [ref=e255]
+                - generic [ref=e257]: 03:04
+              - generic [ref=e261] [cursor=pointer]:
+                - generic "【X0.75版】昭和金曲《マジか！》Papi酱《生气了》日文版" [ref=e262]
+                - generic [ref=e264]: 03:34
+              - generic [ref=e268] [cursor=pointer]:
+                - generic "Papi酱《生气了》西语版 一起热舞吧💃" [ref=e269]
+                - generic [ref=e271]: 02:14
+              - generic [ref=e275] [cursor=pointer]:
+                - generic "Papi酱《生气了》Afro版 黄瓜味薯片的事还是传到了非洲……" [ref=e276]
+                - generic [ref=e278]: 02:53
+              - generic [ref=e282] [cursor=pointer]:
+                - generic "90后记忆！Papi酱《生气了》电子舞曲版 听完想开一把劲舞团" [ref=e283]
+                - generic [ref=e285]: 02:50
+              - generic [ref=e289] [cursor=pointer]:
+                - generic "朝气蓬勃｜Papi酱《生气了》平壤版" [ref=e290]
+                - generic [ref=e292]: 03:25
+              - generic [ref=e296] [cursor=pointer]:
+                - generic "丫够燥的｜Papi酱《生气了》德语重金属摇滚版 这次是真的吓到我了" [ref=e297]
+                - generic [ref=e299]: 04:32
+              - generic [ref=e303] [cursor=pointer]:
+                - generic "Papi酱《生气了》百老汇版" [ref=e304]
+                - generic [ref=e306]: 03:15
+              - generic [ref=e310] [cursor=pointer]:
+                - generic "Papi酱《生气了》hiphop版 UP已经想不到标题了，你们来取吧……" [ref=e311]
+                - generic [ref=e314]: 03:09
+          - generic [ref=e316]:
+            - generic [ref=e317]:
+              - generic [ref=e319]:
+                - link [ref=e323] [cursor=pointer]:
+                  - /url: /video/BV1dwgY6jEQT/?spm_id_from=333.788.recommend_more_video.0&trackid=web_related_0.router-related-2589621-bzdpg.1785894873687.943
+                - generic [ref=e324]:
+                  - link [ref=e325] [cursor=pointer]:
+                    - /url: /video/BV1dwgY6jEQT/?spm_id_from=333.788.recommend_more_video.0&trackid=web_related_0.router-related-2589621-bzdpg.1785894873687.943
+                    - paragraph [ref=e326]: 接着奏乐接着舞！Papi酱《生气了》KPOP版
+                  - link "吉事堡" [ref=e328] [cursor=pointer]:
+                    - /url: //space.bilibili.com/1447736/
+                  - generic [ref=e331]: 200.2万 1523
+              - generic [ref=e335]:
+                - link [ref=e339] [cursor=pointer]:
+                  - /url: /video/BV15E3s64E8g/?spm_id_from=333.788.recommend_more_video.1&trackid=web_related_0.router-related-2589621-bzdpg.1785894873687.943
+                - generic [ref=e340]:
+                  - link [ref=e341] [cursor=pointer]:
+                    - /url: /video/BV15E3s64E8g/?spm_id_from=333.788.recommend_more_video.1&trackid=web_related_0.router-related-2589621-bzdpg.1785894873687.943
+                    - paragraph [ref=e342]: 【papi热烈欢迎加更】让菲姐唱《生气了》吗？我真的不敢想！
+                  - link "papi热烈欢迎" [ref=e344] [cursor=pointer]:
+                    - /url: //space.bilibili.com/3546974810803001/
+                  - generic [ref=e347]: 13.2万 11
+              - generic [ref=e351]:
+                - link [ref=e355] [cursor=pointer]:
+                  - /url: /video/BV1D33t6ZEKc/?spm_id_from=333.788.recommend_more_video.2&trackid=web_related_0.router-related-2589621-bzdpg.1785894873687.943
+                - generic [ref=e356]:
+                  - link [ref=e357] [cursor=pointer]:
+                    - /url: /video/BV1D33t6ZEKc/?spm_id_from=333.788.recommend_more_video.2&trackid=web_related_0.router-related-2589621-bzdpg.1785894873687.943
+                    - paragraph [ref=e358]: 朝气蓬勃｜Papi酱《生气了》平壤版
+                  - link "吉事堡" [ref=e360] [cursor=pointer]:
+                    - /url: //space.bilibili.com/1447736/
+                  - generic [ref=e363]: 24.9万 476
+              - generic [ref=e367]:
+                - link [ref=e371] [cursor=pointer]:
+                  - /url: /video/BV1vmKh6AEdM/?spm_id_from=333.788.recommend_more_video.3&trackid=web_related_0.router-related-2589621-bzdpg.1785894873687.943
+                - generic [ref=e372]:
+                  - link [ref=e373] [cursor=pointer]:
+                    - /url: /video/BV1vmKh6AEdM/?spm_id_from=333.788.recommend_more_video.3&trackid=web_related_0.router-related-2589621-bzdpg.1785894873687.943
+                    - paragraph [ref=e374]: Papi酱《生气了》TVB版，出到第六版在座的各位都有责任
+                  - link "吉事堡" [ref=e376] [cursor=pointer]:
+                    - /url: //space.bilibili.com/1447736/
+                  - generic [ref=e379]: 62.5万 904
+              - generic [ref=e383]:
+                - link [ref=e387] [cursor=pointer]:
+                  - /url: /video/BV1Rt3M6LEvH/?spm_id_from=333.788.recommend_more_video.4&trackid=web_related_0.router-related-2589621-bzdpg.1785894873687.943
+                - generic [ref=e388]:
+                  - link [ref=e389] [cursor=pointer]:
+                    - /url: /video/BV1Rt3M6LEvH/?spm_id_from=333.788.recommend_more_video.4&trackid=web_related_0.router-related-2589621-bzdpg.1785894873687.943
+                    - paragraph [ref=e390]: 昭和金曲《マジか！》Papi酱《生气了》日文版
+                  - link "吉事堡" [ref=e392] [cursor=pointer]:
+                    - /url: //space.bilibili.com/1447736/
+                  - generic [ref=e395]: 256.3万 2168
+              - generic [ref=e399]:
+                - link [ref=e403] [cursor=pointer]:
+                  - /url: /video/BV1qdGg6ZEbT/?spm_id_from=333.788.recommend_more_video.5&trackid=web_related_0.router-related-2589621-bzdpg.1785894873687.943
+                - generic [ref=e404]:
+                  - link [ref=e405] [cursor=pointer]:
+                    - /url: /video/BV1qdGg6ZEbT/?spm_id_from=333.788.recommend_more_video.5&trackid=web_related_0.router-related-2589621-bzdpg.1785894873687.943
+                    - paragraph [ref=e406]: Papi酱《生气了》百老汇版
+                  - link "吉事堡" [ref=e408] [cursor=pointer]:
+                    - /url: //space.bilibili.com/1447736/
+                  - generic [ref=e411]: 9.7万 182
+              - generic [ref=e415]:
+                - link [ref=e419] [cursor=pointer]:
+                  - /url: /video/BV1xP3b6pEPA/?spm_id_from=333.788.recommend_more_video.6&trackid=web_related_0.router-related-2589621-bzdpg.1785894873687.943
+                - generic [ref=e420]:
+                  - link [ref=e421] [cursor=pointer]:
+                    - /url: /video/BV1xP3b6pEPA/?spm_id_from=333.788.recommend_more_video.6&trackid=web_related_0.router-related-2589621-bzdpg.1785894873687.943
+                    - paragraph [ref=e422]: Papi酱《生气了》，但是一惊一乍的迈克尔·杰克逊风味版
+                  - link "哎呀妈呀脑儿瓜疼" [ref=e424] [cursor=pointer]:
+                    - /url: //space.bilibili.com/9455837/
+                  - generic [ref=e427]: 1.5万 40
+              - generic [ref=e431]:
+                - link [ref=e435] [cursor=pointer]:
+                  - /url: /video/BV1P4411Y73n/?spm_id_from=333.788.recommend_more_video.7&trackid=web_related_0.router-related-2589621-bzdpg.1785894873687.943
+                - generic [ref=e436]:
+                  - link [ref=e437] [cursor=pointer]:
+                    - /url: /video/BV1P4411Y73n/?spm_id_from=333.788.recommend_more_video.7&trackid=web_related_0.router-related-2589621-bzdpg.1785894873687.943
+                    - paragraph [ref=e438]: papi酱突然更新的放送——《我妈爱say no！》全网火爆上线~
+                  - link "papi酱" [ref=e440] [cursor=pointer]:
+                    - /url: //space.bilibili.com/1532165/
+                  - generic [ref=e443]: 578.9万 2.2万
+              - generic [ref=e447]:
+                - link [ref=e451] [cursor=pointer]:
+                  - /url: /video/BV1Tb3e6rEf3/?spm_id_from=333.788.recommend_more_video.8&trackid=web_related_0.router-related-2589621-bzdpg.1785894873687.943
+                - generic [ref=e452]:
+                  - link [ref=e453] [cursor=pointer]:
+                    - /url: /video/BV1Tb3e6rEf3/?spm_id_from=333.788.recommend_more_video.8&trackid=web_related_0.router-related-2589621-bzdpg.1785894873687.943
+                    - paragraph [ref=e454]: Papi酱《生气了》Afro版 黄瓜味薯片的事还是传到了非洲……
+                  - link "吉事堡" [ref=e456] [cursor=pointer]:
+                    - /url: //space.bilibili.com/1447736/
+                  - generic [ref=e459]: 28.1万 331
+              - generic [ref=e463]:
+                - link [ref=e467] [cursor=pointer]:
+                  - /url: /video/BV1j8MG6SEwA/?spm_id_from=333.788.recommend_more_video.9&trackid=web_related_0.router-related-2589621-bzdpg.1785894873687.943
+                - generic [ref=e468]:
+                  - link [ref=e469] [cursor=pointer]:
+                    - /url: /video/BV1j8MG6SEwA/?spm_id_from=333.788.recommend_more_video.9&trackid=web_related_0.router-related-2589621-bzdpg.1785894873687.943
+                    - paragraph [ref=e470]: Papi酱单曲《生气了》完整重置版！
+                  - link "181319" [ref=e472] [cursor=pointer]:
+                    - /url: //space.bilibili.com/3493288858356086/
+                  - generic [ref=e475]: 30.3万 112
+              - generic [ref=e479]:
+                - link [ref=e483] [cursor=pointer]:
+                  - /url: /video/BV1JnGN67E6d/?spm_id_from=333.788.recommend_more_video.10&trackid=web_related_0.router-related-2589621-bzdpg.1785894873687.943
+                - generic [ref=e484]:
+                  - link [ref=e485] [cursor=pointer]:
+                    - /url: /video/BV1JnGN67E6d/?spm_id_from=333.788.recommend_more_video.10&trackid=web_related_0.router-related-2589621-bzdpg.1785894873687.943
+                    - paragraph [ref=e486]: Papi酱《生气了》，但是幼教版的儿歌风味
+                  - link "哎呀妈呀脑儿瓜疼" [ref=e488] [cursor=pointer]:
+                    - /url: //space.bilibili.com/9455837/
+                  - generic [ref=e491]: 1.1万 8
+              - generic [ref=e495]:
+                - link [ref=e499] [cursor=pointer]:
+                  - /url: /video/BV18HGP6ZEzk/?spm_id_from=333.788.recommend_more_video.11&trackid=web_related_0.router-related-2589621-bzdpg.1785894873687.943
+                - generic [ref=e500]:
+                  - link [ref=e501] [cursor=pointer]:
+                    - /url: /video/BV18HGP6ZEzk/?spm_id_from=333.788.recommend_more_video.11&trackid=web_related_0.router-related-2589621-bzdpg.1785894873687.943
+                    - paragraph [ref=e502]: papi酱《生气了》夜上海版｜在百乐门优雅地把你拉出黑名单
+                  - link "浮生记青衣-AIGC" [ref=e504] [cursor=pointer]:
+                    - /url: //space.bilibili.com/3706979079949055/
+                  - generic [ref=e507]: 8417 12
+              - generic [ref=e511]:
+                - link [ref=e515] [cursor=pointer]:
+                  - /url: /video/BV1H23m6iErP/?spm_id_from=333.788.recommend_more_video.12&trackid=web_related_0.router-related-2589621-bzdpg.1785894873687.943
+                - generic [ref=e516]:
+                  - link [ref=e517] [cursor=pointer]:
+                    - /url: /video/BV1H23m6iErP/?spm_id_from=333.788.recommend_more_video.12&trackid=web_related_0.router-related-2589621-bzdpg.1785894873687.943
+                    - paragraph [ref=e518]: 凤舞九天音乐工厂｜Papi酱《生气了》土味DJ特别版 刺痛你的神经
+                  - link "吉事堡" [ref=e520] [cursor=pointer]:
+                    - /url: //space.bilibili.com/1447736/
+                  - generic [ref=e523]: 9507 97
+              - generic [ref=e527]:
+                - link [ref=e531] [cursor=pointer]:
+                  - /url: /video/BV1HX3S6gEgo/?spm_id_from=333.788.recommend_more_video.13&trackid=web_related_0.router-related-2589621-bzdpg.1785894873687.943
+                - generic [ref=e532]:
+                  - link [ref=e533] [cursor=pointer]:
+                    - /url: /video/BV1HX3S6gEgo/?spm_id_from=333.788.recommend_more_video.13&trackid=web_related_0.router-related-2589621-bzdpg.1785894873687.943
+                    - paragraph [ref=e534]: Papi酱《生气了》古风武侠电影版｜二胡一拉，这场聊天就成了江湖恩怨
+                  - link "浮生记青衣-AIGC" [ref=e536] [cursor=pointer]:
+                    - /url: //space.bilibili.com/3706979079949055/
+                  - generic [ref=e539]: 5437 13
+              - generic [ref=e543]:
+                - link [ref=e547] [cursor=pointer]:
+                  - /url: /video/BV1vWuA6dEaV/?spm_id_from=333.788.recommend_more_video.14&trackid=web_related_0.router-related-2589621-bzdpg.1785894873687.943
+                - generic [ref=e548]:
+                  - link [ref=e549] [cursor=pointer]:
+                    - /url: /video/BV1vWuA6dEaV/?spm_id_from=333.788.recommend_more_video.14&trackid=web_related_0.router-related-2589621-bzdpg.1785894873687.943
+                    - paragraph [ref=e550]: Papi酱《生气了》法语香颂版本，生气也要保持优雅
+                  - link "呐呐呐呐呐昵称已存在" [ref=e552] [cursor=pointer]:
+                    - /url: //space.bilibili.com/249702481/
+                  - generic [ref=e555]: 152 0
+              - generic [ref=e559]:
+                - link [ref=e563] [cursor=pointer]:
+                  - /url: /video/BV1UJgd6AEey/?spm_id_from=333.788.recommend_more_video.15&trackid=web_related_0.router-related-2589621-bzdpg.1785894873687.943
+                - generic [ref=e564]:
+                  - link [ref=e565] [cursor=pointer]:
+                    - /url: /video/BV1UJgd6AEey/?spm_id_from=333.788.recommend_more_video.15&trackid=web_related_0.router-related-2589621-bzdpg.1785894873687.943
+                    - paragraph [ref=e566]: 燃爆了！Papi酱《生气了》激情飙车版！
+                  - link "安果发大财" [ref=e568] [cursor=pointer]:
+                    - /url: //space.bilibili.com/3706973593799497/
+                  - generic [ref=e571]: 2.2万 50
+              - generic [ref=e575]:
+                - link [ref=e579] [cursor=pointer]:
+                  - /url: /video/BV13P3G6EE3t/?spm_id_from=333.788.recommend_more_video.16&trackid=web_related_0.router-related-2589621-bzdpg.1785894873687.943
+                - generic [ref=e580]:
+                  - link [ref=e581] [cursor=pointer]:
+                    - /url: /video/BV13P3G6EE3t/?spm_id_from=333.788.recommend_more_video.16&trackid=web_related_0.router-related-2589621-bzdpg.1785894873687.943
+                    - paragraph [ref=e582]: Papi酱《生气了》，但是苏维埃风俄语版
+                  - link "Eternity-Li" [ref=e584] [cursor=pointer]:
+                    - /url: //space.bilibili.com/352117879/
+                  - generic [ref=e587]: 47.8万 535
+              - generic [ref=e591]:
+                - link [ref=e595] [cursor=pointer]:
+                  - /url: /video/BV18x316GET8/?spm_id_from=333.788.recommend_more_video.17&trackid=web_related_0.router-related-2589621-bzdpg.1785894873687.943
+                - generic [ref=e596]:
+                  - link [ref=e597] [cursor=pointer]:
+                    - /url: /video/BV18x316GET8/?spm_id_from=333.788.recommend_more_video.17&trackid=web_related_0.router-related-2589621-bzdpg.1785894873687.943
+                    - paragraph [ref=e598]: 90后记忆！Papi酱《生气了》电子舞曲版 听完想开一把劲舞团
+                  - link "吉事堡" [ref=e600] [cursor=pointer]:
+                    - /url: //space.bilibili.com/1447736/
+                  - generic [ref=e603]: 28.7万 289
+              - generic [ref=e607]:
+                - link [ref=e611] [cursor=pointer]:
+                  - /url: /video/BV1C8Gw6CEcj/?spm_id_from=333.788.recommend_more_video.18&trackid=web_related_0.router-related-2589621-bzdpg.1785894873687.943
+                - generic [ref=e612]:
+                  - link [ref=e613] [cursor=pointer]:
+                    - /url: /video/BV1C8Gw6CEcj/?spm_id_from=333.788.recommend_more_video.18&trackid=web_related_0.router-related-2589621-bzdpg.1785894873687.943
+                    - paragraph [ref=e614]: 丫够燥的｜Papi酱《生气了》德语重金属摇滚版 这次是真的吓到我了
+                  - link "吉事堡" [ref=e616] [cursor=pointer]:
+                    - /url: //space.bilibili.com/1447736/
+                  - generic [ref=e619]: 7.2万 220
+              - generic [ref=e623]:
+                - link [ref=e627] [cursor=pointer]:
+                  - /url: /video/BV11L3v6uEHT/?spm_id_from=333.788.recommend_more_video.19&trackid=web_related_0.router-related-2589621-bzdpg.1785894873687.943
+                - generic [ref=e628]:
+                  - link [ref=e629] [cursor=pointer]:
+                    - /url: /video/BV11L3v6uEHT/?spm_id_from=333.788.recommend_more_video.19&trackid=web_related_0.router-related-2589621-bzdpg.1785894873687.943
+                    - paragraph [ref=e630]: papi酱生气了国风版
+                  - link "Mos_蚊子" [ref=e632] [cursor=pointer]:
+                    - /url: //space.bilibili.com/14248135/
+                  - generic [ref=e635]: 9862 4
+            - generic [ref=e638] [cursor=pointer]: 展开
+          - link "年度千万曝光扶持，寻找三农新星！" [ref=e640] [cursor=pointer]:
+            - /url: javascript:void(0);

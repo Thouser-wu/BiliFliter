@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bilibili BulletFilter</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="bf-popup">
+    <!-- 头部 -->
+    <div class="bf-popup-header">
+      <div class="bf-popup-title-area">
+        <span class="bf-popup-icon">🛡️</span>
+        <h1>BulletFilter</h1>
+      </div>
+      <div id="bf-popup-status" class="bf-popup-status on">
+        <span class="bf-popup-status-dot"></span>
+        <span>运行中</span>
+      </div>
+    </div>
+
+    <!-- Ollama状态 -->
+    <div class="bf-popup-section">
+      <div id="bf-popup-ollama-status" class="bf-popup-ollama connected">
+        ✅ 检测中...
+      </div>
+      <button id="bf-popup-refresh" class="bf-popup-btn-small" title="重新加载设置、规则、模型列表和统计">🔄 重新同步</button>
+      <div id="bf-popup-sync-status" class="bf-popup-model-hint"></div>
+      <div id="bf-popup-inject-status" class="bf-popup-model-hint"></div>
+    </div>
+
+    <!-- 主开关 -->
+    <div class="bf-popup-section">
+      <label class="bf-popup-switch">
+        <input type="checkbox" id="bf-popup-enabled" checked>
+        <span class="bf-popup-slider"></span>
+        <span class="bf-popup-label">总开关</span>
+      </label>
+
+      <label class="bf-popup-switch">
+        <input type="checkbox" id="bf-popup-regex" checked>
+        <span class="bf-popup-slider"></span>
+        <span class="bf-popup-label">正则过滤 <span id="bf-regex-count">(0)</span></span>
+      </label>
+
+      <label class="bf-popup-switch">
+        <input type="checkbox" id="bf-popup-ai" checked>
+        <span class="bf-popup-slider"></span>
+        <span class="bf-popup-label">AI 智能过滤</span>
+      </label>
+    </div>
+
+    <!-- 设置 -->
+    <div class="bf-popup-section">
+      <div class="bf-popup-setting-row">
+        <label class="bf-popup-setting-label">AI 敏感度</label>
+        <select id="bf-popup-sensitivity">
+          <option value="low">低（宽松）</option>
+          <option value="medium" selected>中（推荐）</option>
+          <option value="high">高（严格）</option>
+        </select>
+      </div>
+
+      <div class="bf-popup-setting-row">
+        <label class="bf-popup-setting-label">模型</label>
+        <select id="bf-popup-model">
+          <option value="">加载本地模型...</option>
+        </select>
+        <div id="bf-popup-model-hint" class="bf-popup-model-hint"></div>
+      </div>
+
+      <div class="bf-popup-setting-row">
+        <label class="bf-popup-setting-label">Ollama 地址</label>
+        <input type="text" id="bf-popup-ollama-url" value="http://localhost:11434" class="bf-popup-input">
+      </div>
+    </div>
+
+    <!-- AI 验证 -->
+    <div class="bf-popup-section bf-popup-test">
+      <div class="bf-popup-test-header">
+        <span class="bf-popup-test-title">AI 调用验证</span>
+        <button id="bf-test-run" class="bf-popup-btn-small">测试</button>
+      </div>
+      <textarea id="bf-test-text" class="bf-popup-textarea" rows="2" placeholder="输入一条弹幕（例如：来了 / 第三排 / 这段讲得很清楚）"></textarea>
+      <div id="bf-test-result" class="bf-popup-test-result"></div>
+    </div>
+
+    <!-- 自定义屏蔽词 -->
+    <div class="bf-popup-section">
+      <div class="bf-popup-test-header">
+        <span class="bf-popup-test-title">屏蔽词</span>
+        <span id="bf-blockword-hint" class="bf-popup-model-hint"></span>
+      </div>
+      <div class="bf-popup-setting-row">
+        <label class="bf-popup-setting-label">范围</label>
+        <select id="bf-blockword-scope">
+          <option value="global">全局（所有视频）</option>
+          <option value="video">当前视频</option>
+        </select>
+      </div>
+      <div class="bf-popup-blockword-input-row">
+        <input type="text" id="bf-blockword-input" class="bf-popup-input" placeholder="输入屏蔽词，如：剧透 / 主播ID" maxlength="20">
+        <button id="bf-blockword-add" class="bf-popup-btn-small">添加</button>
+      </div>
+      <div id="bf-blockword-list" class="bf-popup-blockword-list"></div>
+    </div>
+
+    <!-- 屏蔽提示词 -->
+    <div class="bf-popup-section">
+      <div class="bf-popup-test-header">
+        <span class="bf-popup-test-title">💬 屏蔽提示词</span>
+        <span class="bf-popup-model-hint">一句话规则，AI 语义判断时遵守</span>
+      </div>
+      <textarea id="bf-prompt-input" class="bf-popup-textarea" rows="2" placeholder="例如：我希望屏蔽抽奖类弹幕 / 屏蔽吹捧UP主的弹幕"></textarea>
+      <div class="bf-popup-setting-row">
+        <label class="bf-popup-setting-label">范围</label>
+        <select id="bf-prompt-scope">
+          <option value="global">全局（所有视频）</option>
+          <option value="video">当前视频</option>
+        </select>
+      </div>
+      <button id="bf-prompt-add" class="bf-popup-btn-small bf-popup-btn-full">＋ 添加屏蔽提示词</button>
+      <div class="bf-popup-model-hint" style="margin-top:4px">提示：屏蔽提示词由 AI 语义判断，与本地屏蔽词互补；想精确拦截的词请用上方「屏蔽词」</div>
+      <div id="bf-prompt-list" class="bf-popup-intent-list"></div>
+    </div>
+
+    <!-- 生效屏蔽词总览 -->
+    <div class="bf-popup-section">
+      <div class="bf-popup-test-header">
+        <span class="bf-popup-test-title">📊 生效屏蔽词</span>
+        <span id="bf-active-count" class="bf-popup-model-hint">加载中...</span>
+      </div>
+      <div id="bf-active-list" class="bf-popup-active-list"></div>
+    </div>
+
+    <!-- 统计 -->
+    <div class="bf-popup-section bf-popup-stats">
+      <div class="bf-popup-test-header">
+        <span class="bf-popup-test-title">本页过滤统计</span>
+        <div class="bf-popup-stats-actions">
+          <button id="bf-stats-refresh" class="bf-popup-btn-small">刷新</button>
+          <button id="bf-stats-reset" class="bf-popup-btn-small bf-popup-btn-danger">清零</button>
+        </div>
+      </div>
+      <div id="bf-stats-text" class="bf-popup-test-result">仅在 B 站页面可用</div>
+      <button id="bf-show-filtered" class="bf-popup-btn-small bf-popup-btn-full" style="margin-top:8px">查看被过滤的弹幕</button>
+      <button id="bf-show-kept" class="bf-popup-btn-small bf-popup-btn-full" style="margin-top:6px">查看已保留的弹幕</button>
+      <div id="bf-filtered-list" class="bf-popup-filtered-list" style="display:none"></div>
+    </div>
+
+    <!-- 底部 -->
+    <div class="bf-popup-footer">
+      <span id="bf-update-time" class="bf-popup-time"></span>
+      <button id="bf-popup-reset" class="bf-popup-btn-small bf-popup-btn-danger">重置设置</button>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
